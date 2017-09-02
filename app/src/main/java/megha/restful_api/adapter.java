@@ -1,9 +1,11 @@
 package megha.restful_api;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,8 +35,8 @@ public class adapter extends RecyclerView.Adapter<adapter.MyViewHolder> {
             t2 = (TextView) view.findViewById(R.id.t2);
             t3 = (TextView) view.findViewById(R.id.t3);
             t4 = (TextView) view.findViewById(R.id.t4);
-        }
 
+        }
     }
 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
