@@ -56,4 +56,5 @@ public class adapter extends RecyclerView.Adapter<adapter.MyViewHolder> {
         holder.t3.setText("Body: "+ ""+d.getBody());
         holder.t4.setText("Title"+""+d.getTitle());
     }
+
 }

@@ -41,25 +41,27 @@ public class MainActivity extends AppCompatActivity {
                         for (i = 0; i < response.length(); i++) {
                             try {
                                 object = response.getJSONObject(i);
-                            data data1=new data(object.getString("title"),object.getString("body"),object.getInt("uid"),object.getInt("id"));
+                                data data1 = new data(object.getString("title"), object.getString("body"), object.getInt("userId"), object.getInt("id"));
                                 dataList.add(data1);
-                            } catch (JSONException e) {
+                                adapter.notifyDataSetChanged();
+                            }
+                            catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
-                        adapter = new adapter(dataList);
-                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
                     }
 
                     @Override
                     public void onError(ANError anError) {
-
                     }
                 });
+
+        adapter = new adapter(dataList);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
 
     }
 }
